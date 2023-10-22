@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView, TouchableWithoutFeedback, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableWithoutFeedback, TouchableHighlight, TouchableNativeFeedback } from 'react-native';
 
 function handlePress() {
   console.log("TOUCHED");
@@ -26,7 +26,15 @@ export default function App() {
             <Text style={styles.tileHeader}>Highlight</Text>
             <Text style={styles.tileText}>press me</Text>
           </View>
-        </TouchableHighlight>   
+        </TouchableHighlight>
+
+        {/* TouchableNativeFeedback */}
+        <TouchableNativeFeedback onPress={() => handlePress()}>
+          <View style={styles.tile}>
+            <Text style={styles.tileHeader}>Native Feedback</Text>
+            <Text style={styles.tileText}>press me</Text>
+          </View>
+        </TouchableNativeFeedback>
 
       <StatusBar style="auto" />
       </View>
